@@ -59,17 +59,12 @@ export class HeaderComponent implements OnInit {
   downloadCV() {
     this.languageService.translateService.get("Header.cvName").subscribe(val => {
       this.cvName = val
-      console.log(val)
       // app url
       let url = window.location.href;
 
       // Open a new window with the CV
       window.open(url + "/../assets/cv/" + this.cvName, "_blank");
     })
-    // const url = 'https://github.com/abdulmuqeet25/Abdul-Muqeet-Ahmad-Profile/assets/cv/RESUME-%20Abdul%20Muqeet%20Ahmad.pdf';
-    
-
-    // window.open(url, '_blank');
   }
 
   @HostListener('window:scroll', ['getScrollPosition($event)'])
